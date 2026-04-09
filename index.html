@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPM Tree Nursery Inventory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="https://videos.pexels.com/video-files/3264426/3264426-hd_1920_1080_24fps.mp4" type="video/mp4">
+    </video>
+
+    <div class="app-container">
+        <!-- Top Navigation -->
+        <header class="top-nav">
+            <div class="nav-group nav-left">
+                <a href="#" class="nav-item active" data-target="view-home">HOME</a>
+                <a href="#" class="nav-item" data-target="view-dashboard">DASHBOARD</a>
+            </div>
+            
+            <div class="brand">
+                <h1>UPM</h1>
+                <span>JOROINEN NURSERY</span>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="document.querySelector('.top-nav').classList.toggle('menu-open')">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            <div class="nav-group nav-right">
+                <a href="#" class="nav-item" data-target="view-stock">INVENTORY</a>
+                <a href="#" class="nav-item" data-target="view-shipments">SHIPMENTS</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="scroll-wrapper">
+                
+                <!-- HOME VIEW -->
+                <div id="view-home" class="view-section active">
+                    <div class="home-hero">
+                        <img src="nursery_hero.png" alt="UPM Tree Nursery Greenhouse">
+                        <div class="home-hero-overlay">
+                            <h1>Celebrating 30 Years of Growth in Joroinen</h1>
+                            <p>Delivering high-quality spruce seedlings and forest planting material for a new, sustainable, and innovation-driven future.</p>
+                            <div>
+                                <button class="btn btn-primary" onclick="document.querySelector('[data-target=\'view-dashboard\']').click()">
+                                    <i class="fa-solid fa-leaf"></i> View Nursery Stock
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="home-about-grid">
+                        <div class="about-card">
+                            <h2><i class="fa-solid fa-book-open"></i> About UPM Joroinen Nursery</h2>
+                            <p>Founded in 1980, UPM's tree nursery in Joroinen, Finland, celebrates its 30th anniversary. We annually produce 14 to 15 million spruce seedlings and forest planting material for our company's own forests and our customers.</p>
+                            <p>Our tree nursery produces healthy, high-quality tree seedlings perfectly suited for different planting areas, with all plants being of guaranteed Finnish origin.</p>
+                            <p>"Modern plant production technologies combined with skilled staff enable the best possible start for a new forest," says manager Anne Immonen. "A healthy plant, successful handling during transportation and storing, as well as good soil preparation are all necessary to create a productive forest."</p>
+                            <p>As part of UPM's Northern Forest Supply Chain, we lead the integration of bio and forest industries into a sustainable future. Two-thirds of forest regeneration is done by planting tree seedlings, choosing species based on the specific soil type to guarantee optimal growth.</p>
+                        </div>
+                        
+                        <div class="quick-facts">
+                            <div class="fact-item">
+                                <div class="fact-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                                <div class="fact-data">
+                                    <strong>Founded 1980</strong>
+                                    <span>30+ Years of Operation</span>
+                                </div>
+                            </div>
+                            <div class="fact-item">
+                                <div class="fact-icon"><i class="fa-solid fa-seedling"></i></div>
+                                <div class="fact-data">
+                                    <strong>15 Million</strong>
+                                    <span>Seedlings Produced Annually</span>
+                                </div>
+                            </div>
+                            <div class="fact-item">
+                                <div class="fact-icon"><i class="fa-solid fa-users"></i></div>
+                                <div class="fact-data">
+                                    <strong>30 Specialists</strong>
+                                    <span>Dedicated production staff</span>
+                                </div>
+                            </div>
+                            <div class="fact-item">
+                                <div class="fact-icon"><i class="fa-solid fa-globe"></i></div>
+                                <div class="fact-data">
+                                    <strong>100% Finnish</strong>
+                                    <span>Locally Sourced Origin</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="home-team">
+                        <div class="personal-card">
+                            <div class="personal-image">
+                                <img src="user_profile.png" alt="Nursery staff hands-on work">
+                            </div>
+                            <div class="personal-content">
+                                <h2><i class="fa-solid fa-seedling" style="color:var(--primary);"></i> Our Personal Commitment</h2>
+                                <p>"Growing strong seedlings isn't just about managing stock numbers and shipment logs—it's about the hands-on care applied to every individual germination tray. My team and I are in the greenhouse every single day, precisely sowing seeds, monitoring battery systems over the winter, and ensuring that each plant gets the absolute perfect start."</p>
+                                <span class="sign-off">- Lead Nursery Operations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DASHBOARD VIEW -->
+                <div id="view-dashboard" class="view-section" style="display: none;">
+                    <!-- Dashboard KPI -->
+                    <section class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-icon"><i class="fa-solid fa-layer-group"></i></div>
+                            <div class="kpi-data">
+                                <h3>Total Seedlings</h3>
+                                <p class="number">12,450,000</p>
+                                <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> 4.2% from last month</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+                            <div class="kpi-data">
+                                <h3>Freezer Storage</h3>
+                                <p class="number">8,200,000</p>
+                                <span class="trend neutral">65% Capacity</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                            <div class="kpi-data">
+                                <h3>Pending Orders</h3>
+                                <p class="number">142</p>
+                                <span class="trend neutral">Next delivery: Today</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card alert-card">
+                            <div class="kpi-icon error"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            <div class="kpi-data">
+                                <h3>Low Stock Alerts</h3>
+                                <p class="number error-text">3 Batches</p>
+                                <span class="trend negative">Action required</span>
+                            </div>
+                        </div>
+                    </section>
+    
+                    <!-- System Alerts -->
+                    <section class="alerts-section">
+                        <div class="section-header">
+                            <h2>System Notifications</h2>
+                        </div>
+                        <div class="alert-banner warning">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <div class="alert-content">
+                                <strong>Low Stock: Scots Pine (Pinus sylvestris)</strong>
+                                <span>Greenhouse B stock has dropped below 10,000 units. Sowing schedule needs adjustment.</span>
+                            </div>
+                            <button class="btn btn-outline-warning btn-sm">Review</button>
+                        </div>
+                    </section>
+    
+                    <!-- Inventory Table -->
+                    <section class="inventory-section">
+                        <div class="section-header">
+                            <h2>Current Stock Directory</h2>
+                            <div class="table-controls">
+                                <select class="filter-select">
+                                    <option>All Locations</option>
+                                    <option>Greenhouse A</option>
+                                    <option>Greenhouse B</option>
+                                    <option>Outdoor Field</option>
+                                    <option>Freezer 1</option>
+                                    <option>Freezer 2</option>
+                                </select>
+                                <select class="filter-select">
+                                    <option>All Species</option>
+                                    <option>Norway Spruce</option>
+                                    <option>Scots Pine</option>
+                                    <option>Silver Birch</option>
+                                </select>
+                                <button class="btn btn-icon"><i class="fa-solid fa-filter"></i></button>
+                            </div>
+                        </div>
+    
+                        <div class="table-container">
+                            <table class="inventory-table">
+                                <thead>
+                                    <tr>
+                                        <th>Batch ID</th>
+                                        <th>Species</th>
+                                        <th>Location</th>
+                                        <th>Date Sown</th>
+                                        <th>Condition</th>
+                                        <th class="text-right">Quantity</th>
+                                        <th class="text-right">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="batch-id">#SP-2023-A4</td>
+                                        <td>Scots Pine (Pinus sylvestris)</td>
+                                        <td>Greenhouse A</td>
+                                        <td>2023-04-12</td>
+                                        <td><span class="status-badge excellent">Excellent</span></td>
+                                        <td class="text-right">450,000</td>
+                                        <td class="text-right">
+                                            <button class="action-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="action-btn" title="Move"><i class="fa-solid fa-truck-ramp-box"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="batch-id">#NS-2022-F1</td>
+                                        <td>Norway Spruce (Picea abies)</td>
+                                        <td>Freezer 1</td>
+                                        <td>2022-11-05</td>
+                                        <td><span class="status-badge stable">Stable</span></td>
+                                        <td class="text-right">1,200,000</td>
+                                        <td class="text-right">
+                                            <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="action-btn"><i class="fa-solid fa-truck-ramp-box"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="batch-id">#SP-2024-B2</td>
+                                        <td>Scots Pine (Pinus sylvestris)</td>
+                                        <td>Greenhouse B</td>
+                                        <td>2024-02-15</td>
+                                        <td><span class="status-badge warning">Needs Water</span></td>
+                                        <td class="text-right">8,500</td>
+                                        <td class="text-right">
+                                            <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="action-btn"><i class="fa-solid fa-truck-ramp-box"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="batch-id">#SB-2023-O1</td>
+                                        <td>Silver Birch (Betula pendula)</td>
+                                        <td>Outdoor Field</td>
+                                        <td>2023-05-20</td>
+                                        <td><span class="status-badge excellent">Excellent</span></td>
+                                        <td class="text-right">180,000</td>
+                                        <td class="text-right">
+                                            <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="action-btn"><i class="fa-solid fa-truck-ramp-box"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="batch-id">#NS-2023-F2</td>
+                                        <td>Norway Spruce (Picea abies)</td>
+                                        <td>Freezer 2</td>
+                                        <td>2023-10-30</td>
+                                        <td><span class="status-badge error">Check Temp</span></td>
+                                        <td class="text-right">45,000</td>
+                                        <td class="text-right">
+                                            <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="action-btn"><i class="fa-solid fa-truck-ramp-box"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- STOCK MANAGEMENT VIEW -->
+                <div id="view-stock" class="view-section" style="display: none;">
+                    <div class="section-header">
+                        <h2>Nursery Stock Management</h2>
+                        <button class="btn btn-primary" id="addStockBtn">
+                            <i class="fa-solid fa-plus"></i> Sowing Entry
+                        </button>
+                    </div>
+
+                    <div class="fancy-grid">
+                        <div class="fancy-card image-card">
+                            <img src="stock_macro.png" alt="Seedling Macro">
+                            <div class="fancy-card-overlay">
+                                <h3>New Germinations</h3>
+                                <div class="fancy-card-stats">
+                                    <div class="stat"><span class="label">Count</span><span class="value">2.4M</span></div>
+                                    <div class="stat"><span class="label">Status</span><span class="value status-good">Healthy</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fancy-card image-card">
+                            <img src="stock_trays.png" alt="Seedling Trays">
+                            <div class="fancy-card-overlay">
+                                <h3>Greenhouse A & B</h3>
+                                <div class="fancy-card-stats">
+                                    <div class="stat"><span class="label">Trays</span><span class="value">14,300</span></div>
+                                    <div class="stat"><span class="label">Growth phase</span><span class="value">Stabilizing</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fancy-card detail-card">
+                            <div class="detail-header">
+                                <div class="icon-circle"><i class="fa-solid fa-seedling"></i></div>
+                                <h3>Stock Composition</h3>
+                            </div>
+                            <ul class="stock-list">
+                                <li>
+                                    <span class="species">Norway Spruce (Picea abies)</span>
+                                    <div class="progress-bar"><div class="fill" style="width: 65%;"></div></div>
+                                    <span class="percentage">65%</span>
+                                </li>
+                                <li>
+                                    <span class="species">Scots Pine (Pinus sylvestris)</span>
+                                    <div class="progress-bar"><div class="fill" style="width: 25%;"></div></div>
+                                    <span class="percentage">25%</span>
+                                </li>
+                                <li>
+                                    <span class="species">Silver Birch (Betula pendula)</span>
+                                    <div class="progress-bar"><div class="fill" style="width: 10%;"></div></div>
+                                    <span class="percentage">10%</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SHIPMENTS VIEW -->
+                <div id="view-shipments" class="view-section" style="display: none;">
+                    <div class="section-header">
+                        <h2>Outbound Shipments Hub</h2>
+                        <div class="header-actions">
+                            <button class="btn btn-outline"><i class="fa-solid fa-file-export"></i> Export Manifest</button>
+                            <button class="btn btn-primary"><i class="fa-solid fa-truck-fast"></i> Schedule Dispatch</button>
+                        </div>
+                    </div>
+
+                    <div class="shipment-layout">
+                        <div class="shipment-main">
+                            <div class="fancy-card large-image-card">
+                                <img src="shipment_bundle.png" alt="Shipment Preparation">
+                                <div class="gradient-overlay">
+                                    <div class="active-dispatch-info">
+                                        <div class="dispatch-badge">PROCESSING NOW</div>
+                                        <h2>Order #4892 - Northern Forestry Co.</h2>
+                                        <p>Preparing 140,000 Scots Pine bundles for cold-chain transport. Expected departure in 2 hours.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="logistics-timeline">
+                                <h3><i class="fa-solid fa-route"></i> Today's Schedule</h3>
+                                <div class="timeline-item completed">
+                                    <div class="time">06:00</div>
+                                    <div class="dot"></div>
+                                    <div class="content">
+                                        <strong>Dispatch #4889</strong>
+                                        <p>120K Spruce • Left facility</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item active">
+                                    <div class="time">10:30</div>
+                                    <div class="dot"></div>
+                                    <div class="content">
+                                        <strong>Dispatch #4892</strong>
+                                        <p>140K Pine • Loading bay 2</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="time">14:00</div>
+                                    <div class="dot"></div>
+                                    <div class="content">
+                                        <strong>Dispatch #4893</strong>
+                                        <p>80K Birch • Pending QA check</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="shipment-sidebar">
+                            <div class="fancy-card alert-card">
+                                <h3><i class="fa-solid fa-snowflake"></i> Transport Protocols</h3>
+                                <p>All active dispatches require strictly controlled cold-chain vehicles (2-4°C). Ensure thermologgers are initialized before closing the truck doors.</p>
+                            </div>
+                            
+                            <div class="stats-mini-card">
+                                <div class="stat-value">340,000</div>
+                                <div class="stat-label">Seedlings shipped this week</div>
+                                <div class="stat-chart line-chart"></div>
+                            </div>
+
+                            <div class="stats-mini-card">
+                                <div class="stat-value">12</div>
+                                <div class="stat-label">Active Trucks Operating</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Stock Modal -->
+    <div class="modal-overlay" id="addStockModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Add Stock Entry</h2>
+                <button class="close-btn" id="closeModalBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="addStockForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Species</label>
+                            <select required>
+                                <option value="">Select species</option>
+                                <option>Scots Pine (Pinus sylvestris)</option>
+                                <option>Norway Spruce (Picea abies)</option>
+                                <option>Silver Birch (Betula pendula)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Batch ID</label>
+                            <input type="text" placeholder="e.g. #SP-2024-C1" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Initial Quantity</label>
+                            <input type="number" placeholder="Enter amount" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Location</label>
+                            <select required>
+                                <option value="">Select location</option>
+                                <option>Greenhouse A</option>
+                                <option>Greenhouse B</option>
+                                <option>Outdoor Field</option>
+                                <option>Freezer 1</option>
+                                <option>Freezer 2</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Date Sown</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Condition</label>
+                            <select required>
+                                <option>New Sown</option>
+                                <option>Germinating</option>
+                                <option>Stable</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="cancelModalBtn">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Entry</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
